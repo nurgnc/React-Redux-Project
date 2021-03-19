@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '../css/Products.css'
+import { connect } from 'react-redux';
+import { getProducts } from '../../store/actions/Api'
 
-export default function Products() {
-    const [products, setProducts] = useState([]);
+const Products = (props) => {
 
     useEffect(() => {
-        axios.get('https://60539ba845e4b300172920cd.mockapi.io/api/products')
-        .then(response => setProducts(response.data))
-        .catch(error => console.log({ error }));
+        props.getProducts();
     }, []);
 
 
@@ -17,18 +15,18 @@ export default function Products() {
     return (
         <div id="product">
             {
-                products.map(product => (
+                props.products.map(product => (
                     <div className="card" key={product.id}>
                         <Link to={`/products/${product.id}`}>
-                            <img src={product.image} alt={product.name}/>
+                            <img src={product.image} alt={product.name} />
                         </Link>
                         <div className="content">
                             <h3>
-                                <Link to={`/products/${product.id}`} style={{textDecoration: "none"}}>{product.name}</Link>
+                                <Link to={`/products/${product.id}`} style={{ textDecoration: "none" }}>{product.name}</Link>
                             </h3>
                             <span>${product.price}</span>
                             <p>{product.description}</p>
-                            <button>Add to card</button>
+                            <button>Add to cart</button>
                         </div>
                     </div>
                 ))
@@ -37,3 +35,10 @@ export default function Products() {
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        products: state.products
+    };
+};
+
+export default connect(mapStateToProps, {getProducts})(Products);
