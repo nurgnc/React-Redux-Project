@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/Products.css'
+//Redux
 import { connect } from 'react-redux';
 import { getProducts } from '../../store/actions/Api'
+import { addToCart } from '../../store/actions/AddToCart'
 
 const Products = (props) => {
 
@@ -26,7 +28,7 @@ const Products = (props) => {
                             </h3>
                             <span>${product.price}</span>
                             <p>{product.description}</p>
-                            <button>Add to cart</button>
+                            <button onClick={() => props.addToCart(product)}>Add to cart</button>
                         </div>
                     </div>
                 ))
@@ -37,8 +39,9 @@ const Products = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: state.products,
+        cart: state.cart
     };
 };
 
-export default connect(mapStateToProps, {getProducts})(Products);
+export default connect(mapStateToProps, {getProducts, addToCart})(Products);

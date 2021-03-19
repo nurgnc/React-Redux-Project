@@ -7,8 +7,10 @@ import Close from './svg/times.svg'
 import CartIcon from './svg/shopping-cart.svg'
 // Styles
 import './css/Header.css'
+//Redux
+import { connect } from 'react-redux';
 
-function Header() {
+const Header = (props) => {
     const [toggle, setToggle] = useState(false);
 
     const menuToggle = () => setToggle(!toggle);
@@ -33,7 +35,7 @@ function Header() {
                     </li>
                 </ul>
                 <div className="nav-cart">
-                    <span>0</span>
+                    <span>{props.cart.length}</span>
                     <Link to="/cart">
                         <img src={CartIcon} alt="menu" width="30" />
                     </Link>
@@ -43,4 +45,11 @@ function Header() {
     )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+    return {
+        products: state.products,
+        cart: state.cart
+    };
+};
+
+export default connect(mapStateToProps)(Header);
