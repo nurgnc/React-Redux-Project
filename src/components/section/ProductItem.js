@@ -1,11 +1,10 @@
 import React from 'react'
 
-function ProductItem() {
+export default function ProductItem() {
     return (
         <div>
-            Items
+            Hi
         </div>
     )
 }
 
-export default ProductItem

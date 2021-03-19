@@ -19,7 +19,7 @@ function Header() {
                 <img src={Menu} alt="menu" width="20" />
             </div>
             <div className="logo">
-                <h1><Link to="/" >Mini Shopping Project</Link></h1>
+                <h1><Link to="/" style={{textDecoration: "none"}}>Shop</Link></h1>
             </div>
             <nav>
                 <ul className={toggle ? "toggle" : ""}>

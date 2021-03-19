@@ -7,7 +7,7 @@
 
 .card {
     min-width: 300px;
-    min-height: 400px;
+    min-height: 450px;
     border: 1px solid #eee;
     overflow: hidden;
     padding: 10px;
@@ -35,5 +35,32 @@
 }
 
 .card h3 a {
-    
+    text-transform: none !important;
+    color: #333;
+}
+
+.card h3 a:hover {
+    color: crimson;    
+}
+
+.card span {
+    color: crimson;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card button {
+    border: none;
+    outline: none;
+    background: #333;
+    color: #ddd;
+    width: 100%;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px 0;
 }
