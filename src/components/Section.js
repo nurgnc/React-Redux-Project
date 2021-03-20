@@ -14,7 +14,7 @@ import LoginRegister from './section/LoginRegister'
 function Section() {
     return (
         <div>
-            <section>
+            <section className="main">
                 <Route path="/" component={Home} exact />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact}  />

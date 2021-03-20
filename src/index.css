@@ -21,7 +21,7 @@ code {
   margin: 0 auto;
 }
 
-section {
+.main {
   box-shadow: 0 0 5px #B79293;
   padding: 2rem 1.5rem;
   margin: 3rem 6rem;
