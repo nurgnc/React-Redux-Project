@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import '../css/Products.css'
 //Redux
 import { connect } from 'react-redux';
-import { getProducts } from '../../store/actions/Api'
-import { addToCart } from '../../store/actions/AddToCart'
+import { getProducts } from '../../store/actions/Api';
+import { addToCart } from '../../store/actions/AddToCart';
 
 const Products = (props) => {
 
