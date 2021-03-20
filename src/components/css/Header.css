@@ -31,7 +31,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: lightseagreen;
+    color: #af968b;
 }
 
 nav .nav-cart {
@@ -43,7 +43,7 @@ nav .nav-cart span {
     position: absolute;
     top: -12px;
     right: -7px;
-    background: crimson;
+    background: #c5aca1;
     font-size: 10px;
     color: white;
     padding: 3px 5px;

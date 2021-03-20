@@ -13,8 +13,9 @@ const Cart = (props) => {
                         <div className="box">
                             <div className="row">
                                 <h2>{item.name}</h2>
-                                <span>{item.price}</span>
+                                <span>${item.price}</span>
                             </div>
+                            
                             <p>{item.description}</p>
                             <Link to="/cart" className="cart">
                                 Add To Cart
